@@ -1,0 +1,33 @@
+{
+  "name": "element-namespace-loader",
+  "version": "0.1.0",
+  "description": "A js loader to change element class prefix",
+  "main": "lib/index.js",
+  "files": ["lib"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pekonchan/element-namespace-loader.git"
+  },
+  "keywords": [
+    "element",
+    "element-ui",
+    "element-plus",
+    "namespace",
+    "prefix"
+  ],
+  "author": "pekonchan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pekonchan/element-namespace-loader/issues"
+  },
+  "homepage": "https://github.com/pekonchan/element-namespace-loader#readme",
+  "dependencies": {
+    "@babel/generator": "^7.16.0",
+    "@babel/parser": "^7.16.4",
+    "@babel/traverse": "^7.16.3",
+    "loader-utils": "^1.4.0"
+  }
+}
