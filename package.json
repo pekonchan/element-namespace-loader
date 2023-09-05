@@ -1,6 +1,6 @@
 {
   "name": "element-namespace-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A js loader to change element class prefix",
   "main": "lib/index.js",
   "files": ["lib"],
