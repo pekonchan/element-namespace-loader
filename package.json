@@ -5,7 +5,9 @@
   "main": "lib/index.js",
   "files": ["lib"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publishMajor": "npm version major && git push && npm publish",
+    "publishMinor": "npm version minor && git push && npm publish",
+    "publishPatch": "npm version patch && git push && npm publish"
   },
   "repository": {
     "type": "git",

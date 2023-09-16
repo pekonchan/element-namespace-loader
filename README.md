@@ -1,12 +1,15 @@
 # element-namespace-loader
 A webpack loader to change element-ui className prefix
-一个用来改变element-ui的组件渲染成HTML后的类名前缀的webpack loader 。即把element-ui专属的`el-`开头的类名改成你想要的命名空间
+
+一个用来改变`element-ui`的组件渲染成HTML后的类名前缀的`webpack loader` 。即把`element-ui`专属的`el-`开头的类名改成你想要的命名空间。
+
+> 该工具代码是对`change-prefix-loader`的改造，主要是`change-prefix-loader`排除了对`element-ui`的icon的处理，而我这个`element-namespace-loader`则会把icon的类名也处理掉
 
 例如, 你设置的命名空间为`ex-`，那么`<el-input></el-input>`组件渲染成HTML后
 **改之前**
 ```
 <div class="el-input">
-    <input type="text" class="qk-doc-el-input__inner">
+    <input type="text" class="el-input__inner">
 </div>
 ```
 **改之后**
@@ -26,14 +29,14 @@ pnpm add element-namespace-loader -D
 ```
 
 # Usage
-对安装下来的element-ui源码包里的js进行使用该webpack loader。 目标就是设置webpack的rule如下：
+对安装下来的`element-ui`源码包里的`js`进行使用该`webpack loader`。 目标就是设置`webpack`的`rule`如下：
 ```
 {
     test: /\.js$/,
     loader: 'element-namespace-loader',
     include: path.resolve(__dirname, '../node_modules/element-ui/lib'),
     options: {
-        replace: 'qk-doc-el-',
+        replace: 'ex-',
     }
 }
 ```
@@ -41,7 +44,7 @@ pnpm add element-namespace-loader -D
 具体设置情况举例：
 
 **针对vue-cli 2.x的项目**
-对webpack的module中的rules添加一个新的匹配规则，如下
+对`webpack`的`module`中的`rules`添加一个新的匹配规则，如下
 ```
 module: {
     rules: [
@@ -79,4 +82,4 @@ module.exports = {
 ```
 
 # 注意
-该loader只会改变element-ui组件渲染成HTML上的类名前缀，而element-ui自己的样式选择器的类名前缀，需要配合该 [postcss-change-prefix-namespace](https://github.com/pekonchan/postcss-change-prefix-namespace) 插件完成。
+该`loader`只会改变`element-ui`组件渲染成`HTML`上的类名前缀，而`element-ui`自己的样式选择器的类名前缀，需要配合该 [postcss-change-prefix-namespace](https://github.com/pekonchan/postcss-change-prefix-namespace) 插件完成。
